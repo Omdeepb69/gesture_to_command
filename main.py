@@ -151,11 +151,15 @@ class HandGestureControl:
         
         try:
             if gesture == "middle_finger":
-                self.status_message = "Shutting down in 10 seconds..."
-                self.command_history.append("Shutdown initiated")
-                # Use shutdown /s /t 10 to give 10 seconds warning before shutdown
-                subprocess.run(["shutdown", "/s", "/t", "10"], shell=True)
-            
+                # self.status_message = "Shutting down in 10 seconds..."
+                # self.command_history.append("Shutdown initiated")
+                # # Use shutdown /s /t 10 to give 10 seconds warning before shutdown
+                # subprocess.run(["shutdown", "/s", "/t", "10"], shell=True)
+                self.status_message = "Sleeping laptop..."
+                self.command_history.append("Sleep initiated")
+                # Put the laptop to sleep
+                ctypes.windll.powrprof.SetSuspendState(0, 1, 0)
+
             elif gesture == "thumbs_up":
                 # Increase volume by 10%
                 self.current_volume = min(1.0, self.current_volume + 0.1)
