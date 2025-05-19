@@ -37,7 +37,7 @@ Tired of the tyranny of physical input devices? Say goodbye to your keyboard and
 
 ```bash
 # Clone this repo
-git clone https://github.com/yourusername/pincher-controller.git
+git clone https://github.com/Omdeepb69/pincher-controller.git
 
 # Enter the magical directory
 cd pincher-controller
